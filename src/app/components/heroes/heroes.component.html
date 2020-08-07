@@ -1,0 +1,13 @@
+<h1>Héroes <small>Marvel y DC</small></h1>
+<hr>
+
+<div class="card-columns">
+
+    <!--Creamos la variable heroe para el arreglo heroes dentro de nuestro servicio heroes.service.ts, creara un elemento por cada heroe-->
+    <!--Creamos una variable i y le damos el valor del index actual del arreglo, esto para mandarlo posteriormente al routerlink-->
+    <!--El [heroe] es el  heroe que esta en el componente heroe-tarjeta, le estamos mandando desde aca la info, en este caso ya dijimos que heroe, es la variable que va recorriendo el arreglo de heroes-->
+    <!--(heroeSeleccionado) recibe el output de app-heroe-tarjeta , el cual nos mandó un index, una vez que ese evento nos mande el index, usamos la función verHeroe de hereoes.component.ts, que es el que nos redirecciona, recibimos del evento con $event -->
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index;"></app-heroe-tarjeta> 
+
+
+</div>
